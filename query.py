@@ -3,6 +3,27 @@
 """
 Query in SolidEdge:
 ==================
+Description: Query Property Constants
+
+Member	                          Value
+seQueryPropertyAuthor	            3
+seQueryPropertyCategory	            6
+seQueryPropertyComments	            8
+seQueryPropertyCompany	            5
+seQueryPropertyCustom	            15
+seQueryPropertyCustomOccurrence	    16
+seQueryPropertyDocumentNumber	    9
+seQueryPropertyKeywords	            7
+seQueryPropertyManager	            4
+seQueryPropertyMaterial	            12
+seQueryPropertyName	                0
+seQueryPropertyProject	            11
+seQueryPropertyReference	        14
+seQueryPropertyRevisionNumber	    10
+seQueryPropertyStatus	            13
+seQueryPropertySubject	            2
+seQueryPropertyTitle	            1
+
 """
 
 import sys
@@ -15,7 +36,7 @@ clr.AddReference("System.Runtime.InteropServices")
 import System
 import System.Runtime.InteropServices as SRI
 from System import Console
-import SolidEdgeAssembly as SEAssembly
+import SolidEdgeAssembly as SEAssembly # constants are in this import
 
 
 def main():
