@@ -30,7 +30,6 @@ def main():
     # It's the collection of elements selected in solidedge.
     # You can get this collecion just by calling it as bellow
     selectSet = application.ActiveSelectSet
-    selectSet.SuspendDisplay()
     selectSet.RemoveAll()
 
     # Query:
@@ -57,10 +56,8 @@ def main():
     # print("count: %s" % objQuery.MatchesCount.ToString())
 
 
-    # objQuery = objQueries.QuickQuery
-
     # Add the query here:
-    zinc = objQueries.Add("Updating")
+    zinc = objQueries.Add("Zinc")
     print(zinc.MatchesCount.ToString())
     zinc.Scope = SEAssembly.QueryScopeConstants.seQueryScopeAllParts
     zinc.SearchSubassemblies = False
@@ -72,6 +69,7 @@ def main():
         SEAssembly.QueryConditionConstants.seQueryConditionContains,
         "HARDWARE",
     )
+
     # Add a second criteria
     zinc.AddCriteria(
         SEAssembly.QueryPropertyConstants.seQueryPropertyCustom,
@@ -80,14 +78,14 @@ def main():
         "ZINC PLATED",
     )
 
+    print("Query created")
     # count elements
-    print("Query slimane created")
     print(zinc.MatchesCount.ToString())
 
 
-    # 
+    #
     # active the query here
-    objQuery = objQueries.Item("Updating")
+    objQuery = objQueries.Item("Zinc")
 
     # active the selection here
     objSelectSet = asm.SelectSet
@@ -95,15 +93,8 @@ def main():
         occurence.Visible = False
 
     # Remove query in the collection of queries
-    ## objQueries.Remove("Zinc")
-    ## print("Query zinc removed")
-
-    # Updating the Screen
-
-    # Re-enable selectset UI display.
-    selectSet.ResumeDisplay()
-    #  Manually refresh the selectset UI display.
-    selectSet.RefreshDisplay()
+    objQueries.Remove("Zinc")
+    print("Query zinc removed")
 
 
 

@@ -38,8 +38,6 @@ clr.AddReference("System.Runtime.InteropServices")
 
 import System
 import System.Runtime.InteropServices as SRI
-from System import Console
-import SolidEdgeAssembly as SEAssembly
 
 
 def main():
@@ -60,23 +58,28 @@ def main():
     selectSet.SuspendDisplay()
     selectSet.RemoveAll() # often you want to make sure nothing is selected.
 
-    # You can add an occurrence to the set.
+    # You can add an occurrence to the set. 
+    # (Also part can be selected and add to selectSet with help of queries.)
     asm.SelectSet.Add(asm.Occurrences.item(1))
-    asm.SelectSet.AddAll(asm.Occurrences)
+    asm.SelectSet.Add(asm.Occurrences.item(2))
 
     #
     print(
         "number of selected items: %s" % selectSet.Count
     )
+    print(asm.selectSet[1].Name) # name of the file
+    print(asm.selectSet[1].PartFileName) # path of the part
+    # print(dir(asm.selectSet[1]))
+
 
     # SelectSet
     #================
     # SelectSet apply on assemblies
-
+    #
     objSelectSet = asm.SelectSet
     for occurence in objSelectSet:
-        occurence.Visible = True
-
+        occurence.Visible = False
+    #
     # Re-enable selectset UI display.(in  the assembly tree)
     selectSet.ResumeDisplay()
     #  Manually refresh the selectset UI display.

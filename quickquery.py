@@ -3,9 +3,6 @@
 """
 QuickQuery in SolidEdge:
 ==================
-def:
-link:
-
 """
 
 import sys
@@ -33,8 +30,6 @@ def main():
     # It's the collection of elements selected in solidedge.
     # You can get this collecion just by calling it as bellow
     selectSet = application.ActiveSelectSet
-    # selectSet.SuspendDisplay()
-    # selectSet.RemoveAll()
 
     # Query:
     # Tanks to query feature you can select elements with specified characteristics.
@@ -61,8 +56,6 @@ def main():
     print("quick query created")
 
 
-    # print(dir(quick))
-    #
     # active the query here
     print(quick.MatchesCount.ToString())
 
@@ -70,13 +63,6 @@ def main():
     objSelectSet = asm.SelectSet
     for occurence in objSelectSet:
         occurence.Visible = False
-
-
-    # Re-enable selectset UI display.
-    # selectSet.ResumeDisplay()
-    #  Manually refresh the selectset UI display.
-    # selectSet.RefreshDisplay()
-
 
 
 def confirmation(func):
