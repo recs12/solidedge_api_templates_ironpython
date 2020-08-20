@@ -3,7 +3,16 @@
 """
 Query in SolidEdge:
 ==================
-Description: Query Property Constants
+
+/// QueryScopeConstants Enumeration
+
+seQueryScopeAllParts	    0
+seQueryScopeHiddenParts	    2
+seQueryScopeSelectedParts	3
+seQueryScopeShownParts	    1
+
+
+/// Query Property Constants
 
 Member	                          Value
 seQueryPropertyAuthor	            3
@@ -23,6 +32,13 @@ seQueryPropertyRevisionNumber	    10
 seQueryPropertyStatus	            13
 seQueryPropertySubject	            2
 seQueryPropertyTitle	            1
+
+
+/// QueryConditionConstants Enumeration
+
+seQueryConditionContains	0
+seQueryConditionIs	        1
+seQueryConditionIsNot	    2
 
 """
 
